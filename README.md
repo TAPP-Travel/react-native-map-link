@@ -2,7 +2,7 @@
 
 [![GitHub release](https://img.shields.io/github/release/includable/react-native-map-link.svg)](https://github.com/includable/react-native-map-link/releases)
 [![npm](https://img.shields.io/npm/dm/react-native-map-link.svg)](https://www.npmjs.com/package/react-native-map-link)
-[![GitHub license](https://img.shields.io/github/license/includable/react-native-map-link.svg)](https://github.com/includable/react-native-map-link/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/includable/react-native-map-link.svg)](https://github.com/includable/react-native-map-link/blob/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/leanmotherfuckers/react-native-map-link.svg)](https://greenkeeper.io/)
 
 ---
 
@@ -19,7 +19,8 @@ Currently supported apps:
 * The Transit App – `transit`
 * Waze – `waze`
 * Yandex.Navi – `yandex`
-* Moovit - `moovit`
+* Moovit – `moovit`
+* Yandex Maps – `yandex-maps`
 
 
 
@@ -47,6 +48,7 @@ Just put this in your `Info.plist` depending on which apps you'd like to support
     <string>waze</string>
     <string>yandexnavi</string>
     <string>moovit</string>
+    <string>yandexmaps</string>
 </array>
 ```
 
@@ -103,8 +105,8 @@ import { Popup } from 'react-native-map-link';
     modalProps={{ // you can put all react-native-modal props inside.
         animationIn: 'slideInUp'
     }}
-    appsWhiteList={{ /* Array of apps (apple-maps, google-maps, etc...) that you want
-    to show in the popup, if is undefined or an empty array it will show all supported apps installed on device.*/}}
+    appsWhiteList={[ /* Array of apps (apple-maps, google-maps, etc...) that you want
+    to show in the popup, if is undefined or an empty array it will show all supported apps installed on device.*/ ]}
     options={{ /* See `showLocation` method above, this accepts the same options. */ }}
     style={{ /* Optional: you can override default style by passing your values. */ }}
 />

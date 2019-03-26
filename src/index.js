@@ -116,6 +116,9 @@ export async function showLocation(options) {
       break
     case 'waze':
       url = `${prefixes['waze']}?ll=${latlng}&navigate=yes`
+      if (title) {
+        url += `&q=${encodedTitle}`
+      }
       break
     case 'yandex':
       url = `${prefixes['yandex']}build_route_on_map?lat_to=${lat}&lon_to=${lng}`
@@ -134,6 +137,10 @@ export async function showLocation(options) {
       if (useSourceDestiny) {
         url += `&orig_lat=${sourceLat}&orig_lon=${sourceLng}`
       }
+      break
+    case 'yandex-maps':
+      url = `${prefixes['yandex-maps']}?pt=${lng},${lat}`
+
       break
   }
 
